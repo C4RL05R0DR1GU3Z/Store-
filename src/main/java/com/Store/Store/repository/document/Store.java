@@ -1,5 +1,6 @@
 package com.Store.Store.repository.document;
 
+import com.Store.Store.controller.dto.StoreDto;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -18,6 +19,11 @@ public class Store {
         this.id = id;
         this.name = name;
         this.price = price;
+    }
+
+    public Store(StoreDto storeDto)
+    {
+        this (null,storeDto.getName(),storeDto.getPrice());
     }
 
     public String getId() {
